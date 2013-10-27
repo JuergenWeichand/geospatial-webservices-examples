@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--
+    WFS 2.0.0 DescribeStoredQueries-Request
+        
+    27.10.2013 Jürgen Weichand (weichand.de)       
+-->
+<DescribeStoredQueries
+    service="WFS"
+    version="2.0.0"
+    xmlns="http://www.opengis.net/wfs/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd" />

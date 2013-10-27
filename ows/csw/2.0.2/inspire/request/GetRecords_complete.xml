@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    CSW 2.0.2 request returning all Records (maxRecords 1000)
+        
+    27.10.2013 Jürgen Weichand (weichand.de)       
+-->
+<GetRecords 
+    xmlns="http://www.opengis.net/cat/csw/2.0.2" 
+    xmlns:csw="http://www.opengis.net/cat/csw/2.0.2" 
+    xmlns:ogc="http://www.opengis.net/ogc" 
+    xmlns:ows="http://www.opengis.net/ows" 
+    xmlns:dct="http://purl.org/dc/terms/" 
+    xmlns:gml="http://www.opengis.net/gml" 
+    xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    service="CSW" 
+    version="2.0.2" 
+    maxRecords="1000" 
+    startPosition="1" 
+    resultType="results" 
+    outputFormat="application/xml" 
+    outputSchema="csw:IsoRecord" 
+    xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2  http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd">
+    <Query typeNames="gmd:MD_Metadata">
+        <ElementSetName typeNames="csw:IsoRecord">full</ElementSetName>
+        <Constraint version="1.1.0">
+            <ogc:Filter>
+                <ogc:PropertyIsLike escapeChar="\" singleChar="?" wildCard="*">
+                    <ogc:PropertyName>AnyText</ogc:PropertyName>
+                    <ogc:Literal>*</ogc:Literal>
+                </ogc:PropertyIsLike>
+            </ogc:Filter>
+        </Constraint>
+    </Query>
+</GetRecords>

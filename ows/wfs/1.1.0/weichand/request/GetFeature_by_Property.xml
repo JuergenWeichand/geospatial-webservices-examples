@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    WFS 1.1.0 GetFeature-Request using Property-Filter
+        
+    27.10.2013 Jürgen Weichand (weichand.de)       
+-->
+<wfs:GetFeature service="WFS" version="1.1.0" maxFeatures="10"
+                xmlns:wfs="http://www.opengis.net/wfs"
+                xmlns:ogc="http://www.opengis.net/ogc"
+                xmlns:gml="http://www.opengis.net/gml"
+                xmlns:bvv="http://www.geodaten.bayern.de"                
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.opengis.net/wfs
+                    http://schemas.opengis.net/wfs/1.1.0/wfs.xsd">                        
+    <wfs:Query typeName="bvv:gmd_ex" srsName="urn:ogc:def:crs:EPSG::31468">
+        <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+                <ogc:PropertyName>bvv:sch</ogc:PropertyName>
+                <ogc:Literal>09162000</ogc:Literal>
+            </ogc:PropertyIsEqualTo>              
+        </ogc:Filter>
+    </wfs:Query>
+</wfs:GetFeature>
