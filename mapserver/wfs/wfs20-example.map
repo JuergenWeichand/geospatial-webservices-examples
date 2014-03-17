@@ -1,0 +1,69 @@
+##################################################################
+#                                                                #
+# UMN MapServer - WFS 2.0 Vorschau "Gemeinden Bayern"            #
+# https://github.com/mapserver/mapserver.git (Master 19386663c5) #
+#                                                                #
+#                                 Jürgen Weichand - weichand.de  #
+#                                                                #
+##################################################################
+
+MAP
+    NAME "OGC:WFS"
+    EXTENT 4264375 5216375 4670625 5622625
+    PROJECTION
+            "init=epsg:31468"
+    END
+
+WEB
+    METADATA
+        # WFS-Metadaten
+        "wfs_title" "UMN MapServer WFS 2.0 Vorschau - Einfaches Konfigurationsbeispiel"
+        "wfs_onlineresource" "http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map"
+        "wfs_srs" "EPSG:31468 EPSG:31467 EPSG:4326 EPSG:4258 EPSG:25832 EPSG:25833"
+        "wfs_enable_request" "*"
+        "wfs_encoding" "UTF-8"
+
+        # GML-Namespace
+        "wfs_namespace_prefix" "bvv"
+        "wfs_namespace_uri" "http://www.geodaten.bayern.de"	
+
+        # WFS 2.0 StoredQueries
+        "wfs_storedqueries" "GemeindeQuery"
+        "wfs_GemeindeQuery_filedef" "/home/wei/wfs20-storedquery-gemeinde.xml"
+    END
+END # Web
+
+LAYER
+    # Datenquelle: http://www.vermessung.bayern.de/opendata
+    NAME      "Gemeinden"
+    TYPE      POLYGON
+    DATA      "/home/wei/linux-geodatenserver-beispiele/vektordaten/verwaltungsgrenzen/gmd_ex.shp"
+    ENCODING  "ISO-8859-1"
+    STATUS    ON
+    PROJECTION
+          "init=epsg:31468"
+    END
+    METADATA
+        # FeatureType-Metadaten
+        "wfs_title"	"Gemeinden (Bayern)"
+        "wfs_abstract" "Datenquelle: Bayerische Vermessungsverwaltung – www.geodaten.bayern.de"
+        "wfs_metadataurl_href" "http://geoportal.bayern.de/csw/bvv?REQUEST=GetRecordById&VERSION=2.0.2&service=CSW&outputschema=csw:IsoRecord&elementsetname=full&ID=eea97fc0-b6bf-11e1-afa6-0800200c9a66"
+
+        # GML-Datenquelle-Attribute
+        "gml_include_items" "BEZ_GEM,BEZ_KRS,BEZ_RBZ,SCH"
+
+        # GML-Schlüsselfeld
+        "gml_featureid" "SCH" 	
+
+        # GML-Geometrieattribut
+        "gml_geometries" "geometry"
+
+        # GML-Attribut-Mapping
+        "gml_BEZ_GEM_alias" "gemeindeName"
+        "gml_BEZ_KRS_alias" "landkreisName"
+        "gml_BEZ_RBZ_alias" "regierungsbezirkName"
+        "gml_SCH_alias" "gemeindeSchluessel"
+    END
+END # Layer
+
+END # Map

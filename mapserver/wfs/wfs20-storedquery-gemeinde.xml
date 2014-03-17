@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+##################################################################
+#                                                                #
+# UMN MapServer - WFS 2.0 Vorschau "Gemeinden Bayern"            #
+# https://github.com/mapserver/mapserver.git (Master 19386663c5) #
+#                                                                #
+#                                 Jürgen Weichand - weichand.de  #
+#                                                                #
+##################################################################
+-->
+<StoredQueryDescription xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        xmlns="http://www.opengis.net/wfs/2.0"     
+                        xmlns:gml="http://www.opengis.net/gml/3.2"
+                        id="urn:ogc:def:query:OGC-WFS::GemeindeQuery">
+    <Title>Gemeinde-anhand-Gemeindeschlüssel</Title>
+    <Abstract>Abfrage einer Gemeinde über den amtlichen Gemeindeschlüssel</Abstract>
+    <Parameter name="gemeindeschluessel" type="xs:string"/>  
+     
+    <QueryExpressionText isPrivate="false"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         xmlns:bvv="http://www.geodaten.bayern.de"
+                         returnFeatureTypes="bvv:Gemeinden">
+        
+        <Query xmlns:fes="http://www.opengis.net/fes/2.0" typeNames="bvv:Gemeinden">
+            <fes:Filter>
+                <fes:PropertyIsEqualTo wildCard="*" singleChar="#" escapeChar="!">
+                    <fes:ValueReference>bvv:gemeindeSchluessel</fes:ValueReference>
+                    <fes:Literal>${gemeindeschluessel}</fes:Literal>
+                </fes:PropertyIsEqualTo>
+            </fes:Filter>
+        </Query>
+        
+    </QueryExpressionText>        
+</StoredQueryDescription>
