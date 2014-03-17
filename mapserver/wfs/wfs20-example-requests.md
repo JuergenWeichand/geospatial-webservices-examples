@@ -1,35 +1,34 @@
 # WFS 2.0 Request-Beispiele #
 
-## GetCapabilities ##
+## GetCapabilities
     
     http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map&service=WFS&acceptversions=2.0.0&request=GetCapabilities
 
-## DescribeFeatureType ##
+## DescribeFeatureType
     
     http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map&service=WFS&version=2.0.0&request=DescribeFeatureType
 
-## ListStoredQueries ##
+## ListStoredQueries
     
     http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map&service=WFS&version=2.0.0&request=ListStoredQueries
 
-## DescribeStoredQueries ##
+## DescribeStoredQueries
 
     http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map&service=WFS&version=2.0.0&request=DescribeStoredQueries
 
-## GetFeature Adhoc ## 
+## GetFeature Adhoc
 
     http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map&service=WFS&version=2.0.0&request=GetFeature&srsName=urn:ogc:def:crs:EPSG::31468&typeNames=bvv:Gemeinden&count=10
 
-## GetFeature StoredQuery ## 
+## GetFeature StoredQuery
 
     http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map&service=WFS&version=2.0.0&request=GetFeature&storedquery_id=GemeindeQuery&gemeindeschluessel=09162000
 
-
-## GetPropertyValue Adhoc ##
+## GetPropertyValue Adhoc
 
     http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map&service=WFS&version=2.0.0&request=GetPropertyValue&srsName=urn:ogc:def:crs:EPSG::31468&typeNames=bvv:Gemeinden&valueReference=bvv:gemeindeName&count=10
 
-## GetPropertyValue StoredQuery ## 
+## GetPropertyValue StoredQuery
 
     http://geoserv.weichand.de/cgi-bin/mapserv-dev?map=/home/wei/wfs20-example.map&service=WFS&version=2.0.0&request=GetPropertyValue&valueReference=bvv:gemeindeName&storedquery_id=GemeindeQuery&gemeindeschluessel=09162000
 
