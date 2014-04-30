@@ -1,8 +1,11 @@
 language: bash
 
-before_script:
-    - wget -O "/tmp/xerces.tar.gz" "http://apache.openmirror.de/xerces/j/binaries/Xerces-J-bin.2.11.0.tar.gz" 
-    - tar xvzf /tmp/xerces.tar.gz
-
+before_install:
+    - sudo apt-get update
+    
+install:
+    - sudo apt-get install libxml2-utils
+    
 script:
-    - bash test/validate.sh
+    - bash test/debug.sh
+    - bash test/check.sh
