@@ -1,0 +1,7 @@
+language: bash
+
+before_script:
+    - curl -L "http://apache.openmirror.de/xerces/j/binaries/Xerces-J-bin.2.11.0.zip" | tar xvzf
+
+script:
+    - bash travisci/validate.sh -v -n -np -s -f ows/wfs/1.0.0/weichand/request/GetFeature_by_BoundingBox.xml
