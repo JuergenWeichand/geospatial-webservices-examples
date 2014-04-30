@@ -5,4 +5,4 @@ before_script:
     - tar xvzf /tmp/xerces.tar.gz
 
 script:
-    - bash test/validate.sh -v -n -np -s -f ows/wfs/1.1.0/weichand/request/GetFeature_by_BoundingBox.xml
+    - bash test/validate.sh
