@@ -4,4 +4,5 @@ before_script:
     - curl -L "http://apache.openmirror.de/xerces/j/binaries/Xerces-J-bin.2.11.0.tar.gz" | tar zx
 
 script:
+    - bash ls -la
     - bash test/validate.sh -v -n -np -s -f ows/wfs/1.1.0/weichand/request/GetFeature_by_BoundingBox.xml
