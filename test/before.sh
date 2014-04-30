@@ -2,3 +2,5 @@
 java -version
 ls -la
 pwd
+cat README.md
+
