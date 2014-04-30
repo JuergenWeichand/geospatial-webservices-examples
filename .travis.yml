@@ -4,6 +4,7 @@ before_install:
     - sudo apt-get update
     
 install:
+    - sudo apt-get install libxml2
     - sudo apt-get install libxml2-utils
     
 script:
