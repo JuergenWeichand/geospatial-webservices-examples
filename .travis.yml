@@ -1,8 +1,8 @@
 language: bash
 
 before_script:
-    - curl -L "http://apache.openmirror.de/xerces/j/binaries/Xerces-J-bin.2.11.0.tar.gz" | tar zx
+    - wget -O "/tmp/xerces.tar.gz" "http://apache.openmirror.de/xerces/j/binaries/Xerces-J-bin.2.11.0.tar.gz" 
+    - tar xvzf /tmp/xerces.tar.gz
 
 script:
-    - bash test/before.sh
     - bash test/validate.sh -v -n -np -s -f ows/wfs/1.1.0/weichand/request/GetFeature_by_BoundingBox.xml
