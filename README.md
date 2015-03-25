@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/JuergenWeichand/geospatial-webservices-examples.svg?branch=travisci-test)](https://travis-ci.org/JuergenWeichand/geospatial-webservices-examples)
+
 Geospatial WebServices examples
 ===============================
 This repository contains Geospatial WebServices examples.
