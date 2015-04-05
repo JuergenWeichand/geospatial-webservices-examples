@@ -6,5 +6,6 @@ This repository contains Geospatial WebServices examples.
 - WFS 1.0.0 (requests)
 - WFS 1.1.0 (requests)
 - WFS 2.0.0 (requests)
+- MapServer 7 (configuration)
 
 http://www.weichand.de
