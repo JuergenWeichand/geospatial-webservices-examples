@@ -1,0 +1,81 @@
+##############################################
+#                                                                	
+# UMN MapServer - WCS 2.0 [Digitales Geländemodell 50m]          
+#                                                                
+# Jürgen Weichand - weichand.de                                  
+#                                                                
+# Last Update: 12.07.2015                                        
+#                                                                
+##############################################
+
+MAP
+    NAME "OGC:WCS"
+    EXTENT 4279025 5236025 4636775 5605525
+    PROJECTION
+            "init=epsg:31468"
+    END
+
+    MAXSIZE 10000
+
+
+# overwrite image/tiff (FLOAT32)
+OUTPUTFORMAT
+  NAME "GEOTIFFFLOAT32"
+  DRIVER "GDAL/GTiff"
+  MIMETYPE "image/tiff"
+  IMAGEMODE "FLOAT32"
+  EXTENSION "tif"
+END
+
+# overwrite Gtiff (FLOAT32)
+OUTPUTFORMAT
+  NAME "GEOTIFFFLOAT32"
+  DRIVER "GDAL/GTiff"
+  MIMETYPE "Gtiff"
+  IMAGEMODE "FLOAT32"
+  EXTENSION "tif"
+END
+
+
+WEB
+    METADATA
+        # WCS-Metadaten
+        "wcs_onlineresource" "http://geoserv.weichand.de/cgi-bin/test-dgm50.cgi"
+        "wcs_srs" "EPSG:31468 EPSG:31467 EPSG:4326 EPSG:4258 EPSG:25832 EPSG:25833"
+        "wcs_enable_request" "*"
+        "wcs_encoding" "UTF-8"
+
+	"wcs_title" "WCS 2.0 [Testserver] - Digitales Geländemodell 50m"
+	"wcs_abstract" "Der Web Coverage Service (WCS 2.0) stellt das bayerische Open Data DGM50 bereit. Datenquelle: Bayerische Vermessungsverwaltung - www.geodaten.bayern.de"
+ 	"wcs_keywordlist" "Geländemodell,DGM50,Open Data,CC-BY" 
+	"wcs_fees" "NONE"
+	"wcs_accessconstraints" "NONE"
+	"wcs_contactorganization" "Jürgen Weichand | geoinformatik blog"
+	"wcs_contactperson" "Jürgen Weichand"
+	# "wcs_contactposition"
+	"wcs_service_onlineresource" "http://www.weichand.de"
+	"wcs_address" "Am Schäferanger 5"
+	"wcs_postcode" "85764"
+	"wcs_city" "Oberschleißheim"
+	"wcs_stateorprovince" "Bayern"
+	"wcs_country" "Deutschland"
+	"wcs_contactelectronicmailaddress" "geo@weichand.de"
+    END
+END # Web
+
+  LAYER
+    NAME dgm50
+    METADATA
+      "wcs_label"           "Digitales Geländemodell 50m"  ### required
+      "wcs_rangeset_name"   "Range 1"  ### required to support DescribeCoverage request
+      "wcs_rangeset_label"  "My Label" ### required to support DescribeCoverage request
+    END
+    TYPE RASTER ### required
+    STATUS ON
+    DATA "/home/wei/data/dgm50/dgm50_epsg31468.tiff"
+    PROJECTION
+      "init=epsg:31468"
+    END
+  END
+
+END # Map
