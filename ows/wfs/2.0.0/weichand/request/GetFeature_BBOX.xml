@@ -17,7 +17,7 @@
         
         <fes:Filter>
             <fes:BBOX>
-                <fes:ValueReference>geom</fes:ValueReference>                  
+                <fes:ValueReference>bvv:geom</fes:ValueReference>                  
                 <gml:Envelope srsName="urn:ogc:def:crs:EPSG::31468">
                     <gml:lowerCorner>5341778.99 4562962.01</gml:lowerCorner>
                     <gml:upperCorner>5349283.35 4571541.27</gml:upperCorner>
