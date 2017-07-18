@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    WFS 2.0.0 GetCapabilities-Request
+        
+    18.07.2017 Jürgen Weichand (weichand.de)       
+-->
+<wfs:GetFeature service="WFS" version="2.0.0"
+                outputFormat="application/gml+xml; version=3.2"
+                xmlns:wfs="http://www.opengis.net/wfs/2.0" 
+                xmlns:gml="http://www.opengis.net/gml/3.2" 
+                xmlns:fes="http://www.opengis.net/fes/2.0" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd  
+                    http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+                    
+    <wfs:Query typeNames="bvv:gmd_ex" xmlns:bvv="http://www.geodaten.bayern.de" srsName="urn:ogc:def:crs:EPSG::31468">
+        
+        <fes:Filter>
+            <fes:BBOX>
+                <fes:ValueReference>geom</fes:ValueReference>                  
+                <gml:Envelope srsName="urn:ogc:def:crs:EPSG::31468">
+                    <gml:lowerCorner>5341778.99 4562962.01</gml:lowerCorner>
+                    <gml:upperCorner>5349283.35 4571541.27</gml:upperCorner>
+                </gml:Envelope>
+            </fes:BBOX>          
+        </fes:Filter>
+        
+    </wfs:Query>    
+     
+</wfs:GetFeature>
